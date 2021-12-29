@@ -14,3 +14,8 @@ slot cars experiments
 - https://github.com/ctretter/CarreraAI/tree/d76c5d5b1214deebad0f8937ff75a34065f88ec7
 - https://github.com/tkem/openlap
 - https://github.com/buntine/laser-drift/blob/6fca9944d6feb1a7505e203ab3eee7a1fe188716/README.md
+
+
+IR arduino
+
+- https://github.com/NicoHood/IRLremote
