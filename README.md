@@ -32,3 +32,6 @@ Either of these should work fine: TSSP4038 TSSP58038 from Vishay (they run at 5V
 from:
 https://forum.arduino.cc/t/follow-an-ir-signal/184755/4
 
+Explanation
+https://electronics.stackexchange.com/questions/228690/ir-receiverrx-not-receiving-a-continuously-signal-from-ir-ledtx-rather-than
+
