@@ -19,3 +19,7 @@ slot cars experiments
 IR arduino
 
 - https://github.com/NicoHood/IRLremote
+
+
+Wavgat arduino card 
+- https://github.com/paraplin/wavgat-board
