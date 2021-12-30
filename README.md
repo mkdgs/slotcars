@@ -23,3 +23,12 @@ IR arduino
 
 Wavgat arduino card 
 - https://github.com/paraplin/wavgat-board
+
+
+Fisrt log fail:
+
+Caveat: some IR receivers cannot handle a continuous signal and turn off. You need to check the data sheet for your IR receiver.
+Either of these should work fine: TSSP4038 TSSP58038 from Vishay (they run at 5V or 3.3V)
+from:
+https://forum.arduino.cc/t/follow-an-ir-signal/184755/4
+
