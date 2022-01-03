@@ -2,6 +2,9 @@
 slot cars experiments
 
 ==Protocole carrera==
+- https://www.slotforum.com/threads/arduino-based-magracing.77829/ http://researchcommons.waikato.ac.nz/handle/10289/8661
+- http://redlichelectronics.de/decoder_software.html
+- http://www.wasserstoffe.de/carrera-hacks/infrarot-erkennung/index.html
 - http://slotbaer.de/
 - http://ssdc.jackaments.com/interface.shtml
 
