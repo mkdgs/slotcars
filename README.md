@@ -18,6 +18,8 @@ slot cars experiments
 - https://github.com/tkem/openlap
 - https://github.com/buntine/laser-drift/blob/6fca9944d6feb1a7505e203ab3eee7a1fe188716/README.md
 
+Mesure de temps/impulsion
+- https://www.f-legrand.fr/scidoc/docmml/sciphys/arduino/frequence/frequence.html
 
 IR arduino
 
