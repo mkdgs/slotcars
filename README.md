@@ -20,6 +20,7 @@ slot cars experiments
 
 Mesure de temps/impulsion
 - https://www.f-legrand.fr/scidoc/docmml/sciphys/arduino/frequence/frequence.html
+- https://locoduino.org/spip.php?id_article=198&page=imprime
 
 IR arduino
 
