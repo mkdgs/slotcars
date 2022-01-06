@@ -1,3 +1,4 @@
+
 /* Carrera DIGITAL 124/132/143 arduino protocol analyser: "The inspector"
  *
  * Dipl.-Ing. Peter Niehues CC BY-NC-SA 3.0
@@ -29,9 +30,70 @@ void setup() {                                        //////
   Serial.begin(115200);                               // initialize serial bus 
   pinMode(dataPin, INPUT);                            // initialize the dataPin as an input
   attachInterrupt(0, manchesterDecode, CHANGE);       // whenever levels on dataPin change, start interrupt routine
-}                                                     //////
+}     
 
-void loop() {                                         //////
+
+struct Hardw {
+  unsigned short int freq = 32; // MHZ
+};
+
+const Hardw Hardware;
+
+struct Car {
+  unsigned short int id;
+  float ledFreq;
+  byte carAdress;
+};
+
+
+
+/*
+ Berechnung PWM Werte der IR LEDs für Auto 1 bis 8
+ Timertick ist 4µs bzw, 2 µs @ 32 MHz
+ PWM Wert = Periode / Timertick - 1
+   
+ Auto   Frequenz        Periode/µs   Value PWM 16 MHz     Value PWM 32 MHz  
+ 1      15,625           64             15                  31
+ 2      7,8125          128             31                  63
+ 3      5,208333333     192             47                  95
+ 4      3,90625         256             63                  127  
+ 5      3,125           320             79                  159
+ 6      2,604166667     384             95                  191 
+ 7      2,232142857     448            111                  223
+ 8      1,953125        512            127                  255
+ */
+
+#define   IR_LED_PWM_CAR_1               31 
+#define   IR_LED_PWM_CAR_2               63
+#define   IR_LED_PWM_CAR_3               95
+#define   IR_LED_PWM_CAR_4              127
+#define   IR_LED_PWM_CAR_5              159  
+#define   IR_LED_PWM_CAR_6              191
+#define   IR_LED_PWM_CAR_7              223
+#define   IR_LED_PWM_CAR_8              255
+const Car cars[7] = {
+  {1, 15.625, 1},
+  {2, 7.8125, 2}
+};
+
+//////
+void loop() {  
+  
+Serial.print(Hardware.freq); 
+  Car variable = { 255 , 0 , 0 };
+/*
+if (variable.r == 255 && variable.g == 0 && variable.b == 0){
+  //red detected, go black
+  variable.r = 0;
+}
+else if (variable.r == 0 && variable.g == 255 && variable.b == 0){
+  // green detected, go purple
+  // Rather than changing each members of the struct one
+  // at a time, you can create a new instance of the struct:
+  variable = (RGB){255, 0, 255};
+}*/
+
+  //////
   if( wordChange == true ){                           // only start when interrupt routine has assemled a complete word
     wordChange = false;                               // reset word change indicator
     if( Word > 4000 )                                 // synchronize to longest dataword with 13 bits
@@ -66,11 +128,14 @@ void manchesterDecode(){                              //////
     return; }                                         // leave interrupt                 
 }                                                     //////
 
+
+
+
 /*
  * End of "The Inspector" Carrera Decoding Sketch
  */
 
-/*****************************************************************************/
+ /*****************************************************************************/
 
 /// \file       defines.h
 /// \author     Frank Redlich
@@ -82,45 +147,6 @@ void manchesterDecode(){                              //////
 ///             Hardware:   Rev2a
 
 /******************************************************************************/
-/*
- neu an 1.01 
- * getrennte Pulslängen für High und Low-Pulse. Durch das Schaltverhalten des
-   Transistors ist die Highphase immer kürzer als die Low Phase 
-
- neu an 1.02 
- * verschiedene Defines für 16 MHz Takt und 32 MHz Takt  
-  
- neu an 1.03
- * compilerswitch für Prozessortakt entfernt, jetzt immer 32MHz  
-  
- neu an 1.04
- * defines für nicht negierte (standard Schaltung) und negierten Input 
- 
- neu an 1.05
- * Formel 1 Bremslicht hat andere Einschaltdauer 
-   
- */
-
-#ifndef DEFINES_H
-#define	DEFINES_H
-
-
-#include "version.h"
-
-#ifdef STANDARD_DECODER
-    #define  INPUT_INVERTED             // normale Schaltung mit Eingangs-Transistor
-    #undef   INPUT_NOT_INVERTED         // Schaltung nach Marc Walter, Ableitung der                                      
-                                        // Überspannung durch Schutzdiode des PIC
-#endif
-
-#ifdef DIY_DECODER
-    #undef  INPUT_INVERTED              // normale Schaltung mit Eingangs-Transistor
-    #define INPUT_NOT_INVERTED          // Schaltung nach Marc Walter, Ableitung der                                      
-                                        // Überspannung durch Schutzdiode des PIC
-#endif
-
-
-
 
 
 #define   JA                            1
@@ -175,30 +201,6 @@ void manchesterDecode(){                              //////
 
 
 
-/*
- Berechnung PWM Werte der IR LEDs für Auto 1 bis 8
- Timertick ist 4µs bzw, 2 µs @ 32 MHz
- PWM Wert = Periode / Timertick - 1
-   
- Auto   Frequenz        Periode/µs   Value PWM 16 MHz     Value PWM 32 MHz  
- 1      15,625           64             15                  31
- 2      7,8125          128             31                  63
- 3      5,208333333     192             47                  95
- 4      3,90625         256             63                  127  
- 5      3,125           320             79                  159
- 6      2,604166667     384             95                  191 
- 7      2,232142857     448            111                  223
- 8      1,953125        512            127                  255
- */
-
-#define   IR_LED_PWM_CAR_1               31 
-#define   IR_LED_PWM_CAR_2               63
-#define   IR_LED_PWM_CAR_3               95
-#define   IR_LED_PWM_CAR_4              127
-#define   IR_LED_PWM_CAR_5              159  
-#define   IR_LED_PWM_CAR_6              191
-#define   IR_LED_PWM_CAR_7              223
-#define   IR_LED_PWM_CAR_8              255
 
 
 #define   PULS_START                    1
@@ -249,7 +251,6 @@ void manchesterDecode(){                              //////
 #define   PULS_LANG_LOW                 5
 
 
-#endif	/* DEFINES_H */
 
 
 
