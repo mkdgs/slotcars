@@ -31,6 +31,7 @@ unsigned long currentMicros  = 0;
 
 struct CarWord {
   long bitData;
+  long one = READFROM(bitData, 10-4, 4); // from the end
   FIELD(bitData, one, 0, 1)
   FIELD(bitData, aspeed, 2, 3)
 };
