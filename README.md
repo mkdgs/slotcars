@@ -41,3 +41,7 @@ https://forum.arduino.cc/t/follow-an-ir-signal/184755/4
 Explanation
 https://electronics.stackexchange.com/questions/228690/ir-receiverrx-not-receiving-a-continuously-signal-from-ir-ledtx-rather-than
 
+
+Composant:
+IR sensor OSRAM SFH309FA 
+
