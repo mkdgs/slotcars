@@ -22,6 +22,9 @@ Mesure de temps/impulsion
 - https://www.f-legrand.fr/scidoc/docmml/sciphys/arduino/frequence/frequence.html
 - https://locoduino.org/spip.php?id_article=198&page=imprime
 
+PWM génération signal
+- https://docs.arduino.cc/tutorials/generic/secrets-of-arduino-pwm
+
 IR arduino
 
 - https://github.com/NicoHood/IRLremote
