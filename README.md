@@ -43,7 +43,7 @@ https://electronics.stackexchange.com/questions/228690/ir-receiverrx-not-receivi
 
 
 Composant:
-IR sensor OSRAM SFH309FA 
+IR sensor OSRAM SFH309FA | Vishay TEFT4300
 
 IR emiter Vishay TSAL4400  | may be IR du type SFH487 
 
