@@ -20,9 +20,9 @@
 struct Hardw { 
   // card wavgate UNO
   unsigned short int freq = 32; // MHZ
-  unsigned short int timerTick = 2; // MHZ
+  unsigned short int timerTick = 2; //
   
-  unsigned short int pinTrack = 2; // MHZ  
+  unsigned short int pinTrack = 2; // 
   unsigned short int pinIrLed = 3; // Car id ir pulse  TIMER OC0A // doc p97
   unsigned short int pinLight = 4; // 
   unsigned short int pinRearLight = 5; //
@@ -64,7 +64,6 @@ struct Hardw {
     (round(2.232142857 * 1000)), // car id Ghostcar 
     (round(1.953125 * 1000)), // car id Pacecare 
   };
-
 };
 
 const Hardw hardware;
@@ -143,7 +142,7 @@ void loop() {
     else if (0b1000000000 <= Word && 0b1111111111 >= Word ) {
       Serial.println( Word, BIN );     
       CarWord car = {Word};           
-      //Serial.println(car.aspeed);
+      // Serial.println(car.aspeed);
       // Serial.println(getBit(Word, 1, 3),BIN); // 3 Adresse du contrôleur (0-5). MSB
       driveCar(car);
       Serial.println(" CAR WORD");
