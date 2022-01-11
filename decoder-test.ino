@@ -27,16 +27,14 @@ struct Hardw {
   unsigned short int pinLight = 4; // 
   unsigned short int pinRearLight = 5; //
   unsigned short int pinNeon = 6; // why not ? 
-
    
   // car
   unsigned short int carID = 0; // current car ID
   /*
-     Berechnung PWM Werte der IR LEDs für Auto 1 bis 8
-     Timertick ist 4µs bzw, 2 µs @ 32 MHz
-     PWM Wert = Periode / Timertick - 1
-       
-     Auto   Frequenz kHz      Periode/µs   Value PWM 16 MHz     Value PWM 32 MHz  
+     IR LED
+     Timertick 4µs, 2 µs @ 32 MHz
+     PWM = Period / Timertick - 1       
+     Auto   Frequenz kHz      Period/µs   Value PWM 16 MHz     Value PWM 32 MHz  
      1      15,625           64             15                  31
      2      7,8125          128             31                  63
      3      5,208333333     192             47                  95
@@ -69,9 +67,7 @@ struct Hardw {
 
 };
 
-
 const Hardw hardware;
-
 struct CarWord {
   long bitData;
   long id; // car track ID
@@ -89,8 +85,7 @@ struct CarWord {
 
 // not used on digital 143
 struct ghostCarWord {
-  long bitData;
-  
+  long bitData;  
   long id = getBit(bitData, 10-4, 3); // 111 
   long kfr = getBit(bitData, 10-4, 3); // kfr ?  
   long run = getBit(bitData, 10-4, 3); // ? 
@@ -111,7 +106,6 @@ struct playerWord {
   long p5 = getBit(bitData, 1, 1); 
   long act = getBit(bitData, 0, 1);  
 };
-
 
 void setup() {                                        
   Serial.begin(115200);                                
@@ -137,8 +131,6 @@ long currentWord = 0;
 unsigned long intervalMicros = 0;                     
 unsigned long previousMicros = 0;                     
 unsigned long currentMicros  = 0;
-
-
                                            
 void loop() {                                         
   if( wordChange == true ){                           
@@ -163,8 +155,7 @@ void loop() {
     else {
      // Serial.print( Word, BIN );
      // Serial.println(" UNKNOW WORD");
-    }
-    
+    }    
   }                          
 }                                        
 
@@ -191,10 +182,8 @@ void manchesterDecode(){
 }            
 
 void driveCar(CarWord car) {
-
   if ( car.id == hardware.carID ) {
     timerIrWavgat(car.id);
-
  }
 }
 
