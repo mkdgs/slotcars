@@ -20,6 +20,22 @@ slot cars experiments
 - https://github.com/buntine/laser-drift/blob/6fca9944d6feb1a7505e203ab3eee7a1fe188716/README.md
 - https://github.com/azya52/carrera
 
+
+Fisrt fail:
+
+Caveat: some IR receivers cannot handle a continuous signal and turn off. You need to check the data sheet for your IR receiver.
+Either of these should work fine: TSSP4038 TSSP58038 from Vishay (they run at 5V or 3.3V)
+from:
+https://forum.arduino.cc/t/follow-an-ir-signal/184755/4
+
+Explanation
+https://electronics.stackexchange.com/questions/228690/ir-receiverrx-not-receiving-a-continuously-signal-from-ir-ledtx-rather-than
+
+
+Targeted component for IR:
+IR sensor OSRAM SFH309FA | Vishay TEFT4300
+IR emiter Vishay TSAL4400  | may be IR du type SFH487 
+
 Mesure de temps/impulsion
 - https://www.f-legrand.fr/scidoc/docmml/sciphys/arduino/frequence/frequence.html
 - https://locoduino.org/spip.php?id_article=198&page=imprime
@@ -32,23 +48,9 @@ IR arduino
 - https://github.com/NicoHood/IRLremote
 
 
-Wavgat arduino card 
+Wavgat arduino card Driver
 - https://github.com/paraplin/wavgat-board
 
 
-Fisrt log fail:
 
-Caveat: some IR receivers cannot handle a continuous signal and turn off. You need to check the data sheet for your IR receiver.
-Either of these should work fine: TSSP4038 TSSP58038 from Vishay (they run at 5V or 3.3V)
-from:
-https://forum.arduino.cc/t/follow-an-ir-signal/184755/4
-
-Explanation
-https://electronics.stackexchange.com/questions/228690/ir-receiverrx-not-receiving-a-continuously-signal-from-ir-ledtx-rather-than
-
-
-Composant:
-IR sensor OSRAM SFH309FA | Vishay TEFT4300
-
-IR emiter Vishay TSAL4400  | may be IR du type SFH487 
 
