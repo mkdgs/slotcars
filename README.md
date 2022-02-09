@@ -9,7 +9,7 @@ slot cars experiments
 - http://ssdc.jackaments.com/interface.shtml
 
 
-==project==
+==related projects==
 - https://github.com/tkem/CarreraDigitalControlUnit/tree/07faf4bee84cc8cf4e29c74a9abe9e63c0172eb3
 - https://github.com/thilbig/carrera-wifi/blob/f21c371769c1814df0e334b3ee0ddfcfd52c1c4b/readme.md
 - https://github.com/tkem/carreralib/blob/7d7dea4991c433dfdf799ba74be1feef49879187/README.rst
