@@ -1,5 +1,5 @@
 # slotcars
-slot cars experiments with carrera digital 143
+slot cars experiments with carrera digital 143 and arduino/bluepills
 
 ==Protocole carrera==
 - https://www.slotforum.com/threads/arduino-based-magracing.77829/ http://researchcommons.waikato.ac.nz/handle/10289/8661
